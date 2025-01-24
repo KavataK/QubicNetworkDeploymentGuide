@@ -256,7 +256,8 @@ After running the above command, you will receive a loop device name (e.g., /dev
 
    The computorSeeds.txt file contains 676 entries. To run the network on two or more nodes, compile a separate qubic.efi for each node.
    Split the seeds from the computorSeeds.txt file across the nodes. 
-   For a single node, use all 676 entities.
+   For a single node, use all 676 entities (and refer to the instructions in [Running the Network on a Single Node](#running-the-network-on-a-single-node)).
+
    Update computorSeeds with the appropriate seed.
 
    ```
