@@ -49,26 +49,27 @@ Follow these steps to quickly set up and launch the Qubic test network:
 To create and prepare a Virtual Hard Disk (VHD) on Windows, follow these steps:
 
 1. Open **Disk Management**, then go to **Action -> Create VHD**.  
-   ![Disk Management - Create VHD](https://github.com/KavataK/QubicNetworkDeploymentGuide/img/1.png?raw=true)
+   ![Disk Management - Create VHD](img/1.png) 
 
 2. Choose a location for the VHD file and set the disk size.  
    > **Note**: One epoch requires at least **3.2 GB**. If you plan to run the network for multiple epochs, ensure the VHD is sized accordingly.
 
 3. Configure the VHD as shown in the screenshots below:  
-   ![VHD Configuration Step 1](https://github.com/KavataK/QubicNetworkDeploymentGuide/img/2.png?raw=true)  
-   ![VHD Configuration Step 2](https://github.com/KavataK/QubicNetworkDeploymentGuide/img/3.png?raw=true)  
-   ![VHD Configuration Step 3](https://github.com/KavataK/QubicNetworkDeploymentGuide/img/4.png?raw=true)  
-   ![VHD Configuration Step 4](https://github.com/KavataK/QubicNetworkDeploymentGuide/img/5.png?raw=true)
+   ![VHD Configuration Step 1](img/2.png)   
+   ![VHD Configuration Step 2](img/3.png)  
+   ![VHD Configuration Step 3](img/4.png) 
+   ![VHD Configuration Step 4](img/5.png) 
 
 4. Copy and extract the files from `144.zip` to the newly created disk. The disk should contain the following folders:
+   - **efi folder**  
    - **contract files**
    - **spectrum**
    - **universe**
-   - **efi folder**  
-   ![Files in Disk](https://github.com/KavataK/QubicNetworkDeploymentGuide/img/6.png?raw=true)
+   
+   ![Files in Disk](img/6.png) 
 
 5. The VHD is now ready. **Detach** it (right-click on the disk and choose "Detach VHD") and proceed to the [Installation and Configuration of the VM](#installing-and-configuring-the-vm).  
-   ![Detach VHD](https://github.com/KavataK/QubicNetworkDeploymentGuide/img/7.png?raw=true)
+   ![Detach VHD](img/7.png) 
 
 ---
 
@@ -103,7 +104,7 @@ To create and prepare a Virtual Hard Disk (VHD) on Linux, follow these steps:
    ```
 
 After running the above command, you will receive a loop device name (e.g., /dev/loopX). **Replace loopX with your actual loop device number** in the following commands.
-  ![LoopX](https://github.com/KavataK/QubicNetworkDeploymentGuide/img/18.png?raw=true)
+  ![LoopX](img/18.png) 
 
 6. **Create an MS-DOS partition table**:
    ```
@@ -152,29 +153,29 @@ After running the above command, you will receive a loop device name (e.g., /dev
    > Official link: [virtualbox.org](https://www.virtualbox.org/wiki/Downloads/) 
  
    Go to the VirtualBox official website, download and install VirtualBox for your operating system.  
-   ![Download VirtualBox](https://github.com/KavataK/QubicNetworkDeploymentGuide/img/8.png?raw=true)
+   ![Download VirtualBox](img/8.png) 
 
 2. **Download and install the Extension Pack**:
    - Open VirtualBox  
    - Press `Ctrl + T`.
    - Click **Add** (the "+" icon) and select the downloaded Extension Pack file to install it.  
-   ![Install Extension Pack](https://github.com/KavataK/QubicNetworkDeploymentGuide/img/9.png?raw=true)
+   ![Install Extension Pack](img/9.png) 
 
 3. **Create a New Virtual Machine**  
    - Click the **New** button in VirtualBox or press `Ctrl + N`.  
-   ![Create New VM](https://github.com/KavataK/QubicNetworkDeploymentGuide/img/10.png?raw=true)
+   ![Create New VM](img/10.png) 
 
 4. **Configure the VM**  
    Set the following options for the new virtual machine:
    - **Name**: Choose a name for your VM (e.g., "Qubic-TestNet").
    - **Type**: Other.
    - **Version**: Other/Unknown (64-bit).  
-   ![VM Configuration](https://github.com/KavataK/QubicNetworkDeploymentGuide/img/11.png?raw=true)
+   ![VM Configuration](img/11.png) 
 
    - **Base Memory**: Allocate the maximum amount of RAM (e.g., **61440 MB** or more).
    - **Processors**: Allocate the maximum number of CPU cores.
    - **Enable EFI**: Check the box to enable EFI (ensure this option is enabled).  
-   ![VM Memory and Processor Settings](https://github.com/KavataK/QubicNetworkDeploymentGuide/img/12.png?raw=true)
+   ![VM Memory and Processor Settings](img/12.png) 
 
    - **Virtual Hard Disk**: Select **Use an existing virtual hard disk file**, and attach the VHD file you prepared earlier.
 
@@ -182,15 +183,15 @@ After running the above command, you will receive a loop device name (e.g., /dev
    - Select the VM and click **Settings**.
    - Go to the **Network** tab:
      - Enable **Adapter 1** and set it to **Paravirtualized Network**.  
-   ![Network Adapter Settings](https://github.com/KavataK/QubicNetworkDeploymentGuide/img/16.png?raw=true)
+   ![Network Adapter Settings](img/16.png) 
 
 6. **Configure port forwarding for external access** 
-   ![Port Forwarding Settings](https://github.com/KavataK/QubicNetworkDeploymentGuide/img/17.png?raw=true)
+   ![Port Forwarding Settings](img/17.png) 
 
 7. **Run the VM**
    After launching the node, check the output logs.  
    If the output matches the screenshot below, you can proceed to create your custom `qubic.efi` file.  
-   ![VM Output Logs](https://github.com/KavataK/QubicNetworkDeploymentGuide/img/19.png?raw=true)
+   ![VM Output Logs](img/19.png) 
 
 ---
 
@@ -254,7 +255,8 @@ After running the above command, you will receive a loop device name (e.g., /dev
    **Replace computorSeeds** with seeds from the computorSeeds.txt file
 
    The computorSeeds.txt file contains 676 entries. To run the network on two or more nodes, compile a separate qubic.efi for each node.
-   Split the seeds from the computorSeeds.txt file across the nodes. For a single node, use all 676 entities.
+   Split the seeds from the computorSeeds.txt file across the nodes. 
+   For a single node, use all 676 entities.
    Update computorSeeds with the appropriate seed.
 
    ```
@@ -289,77 +291,7 @@ Build the project to generate the qubic.efi file.
 
 After launching the node, check the output logs.
 If the output matches the expected result (similar to the screenshot below), you can proceed to the next stage.
-![VM Output Logs](https://github.com/KavataK/QubicNetworkDeploymentGuide/img/19.png?raw=true)
-
----
-
-## Sending Indices to the Node
-
-1. **Switching to MAIN/MAIN Mode**  
-   To allow the node to receive indices, you need to switch to **MAIN/MAIN Mode**.  
-   This mode must be set on all nodes.
-
-   - Press **F12** three times while the node is running.  
-     Each press of **F12** cycles through the following modes:  
-     - aux/aux  
-     - Main/aux  
-     - aux/Main  
-     - **Main/Main**  
-   
-   - To verify the current mode, press **F2** to check the current status of the node.  
-     Look for the active mode in the status output.  
-     Ensure the node is set to **MAIN/MAIN mode**.  
-   ![Main/Main Mode](https://github.com/KavataK/QubicNetworkDeploymentGuide/img/22.png?raw=true)
-
-2. **Sending Indices to the Node**  
-   To send indices to the node, you need to broadcast the list of computers using the `broadcastComputorTestnet` program.  
-   **Important**: Run this program on **only one node** at a time!
-
-   Run the `broadcastComputorTestnet` command with the following syntax:  
-   ```
-   ./broadcastComputorTestnet <ip> <epoch> <port>
-   ```
-   - <ip>: The IP address of the node where you want to send the indices.
-   - <epoch>: The epoch number (e.g., 144).
-   - <port>: The port used by the node (e.g., 31843).
-
-   Example command:
-
-   ```
-   ./broadcastComputorTestnet 193.135.9.63 144 31843
-   ```
-
-   Check the Command Result
-   After running the command, check the output. If the command is executed successfully, you should see output similar to the following:
-   ![Command result](https://github.com/KavataK/QubicNetworkDeploymentGuide/img/20.png?raw=true)
-
-   The node should receive the indices and display them in the logs:
-   ![Node Logs](https://github.com/KavataK/QubicNetworkDeploymentGuide/img/21.png?raw=true)
-
-   Once the indices are received, the network should start ticking (the tick number will increase):
-   ![Ticking Network](https://github.com/KavataK/QubicNetworkDeploymentGuide/img/23.png?raw=true)
-
-If the node is ticking, it means the network has been successfully started. To interact with the network, you can use the qubic-cli tool.
-   > https://github.com/qubic/qubic-cli.git
-
-   Example command to check the balance of an address:
-
-   ```
-   ./qubic-cli -nodeip 91.210.226.133 -nodeport 31841 -getbalance SCTZJZQQCULIIGFGDANGDBMMBWSBJEOGNYOCBRZJOAOZYAHMKHJDXBPBDFIH
-   ```
-
-3. **Troubleshooting**
-
-If the node doesn't receive the indices on the first attempt, try running the command multiple times until the indices are successfully received.
-
-If the network doesn't start ticking, follow these steps:
-
-Check thread health: Press F2 while the node is running to display the current status of the node.
-![Main/Main Mode](https://github.com/KavataK/QubicNetworkDeploymentGuide/img/22.png?raw=true)
-Ensure that all threads are healthy and the node is operating properly.
-
-Check the node connection: Verify that the node is reachable at the specified IP and port.
-Ensure that the network configuration is correct and there are no connectivity issues.
+![VM Output Logs](img/19.png) 
 
 ---
 
@@ -391,6 +323,76 @@ Add the IP address of the machine running the echo.py script to the peers sectio
        {192, 168, 1, 102}, // IP of the machine with echo script  
    };
    ```
+
+---
+
+## Sending Indices to the Node
+
+1. **Switching to MAIN/MAIN Mode**  
+   To allow the node to receive indices, you need to switch to **MAIN/MAIN Mode**.  
+   This mode must be set on all nodes.
+
+   - Press **F12** three times while the node is running.  
+     Each press of **F12** cycles through the following modes:  
+     - aux/aux  
+     - Main/aux  
+     - aux/Main  
+     - **Main/Main**  
+   
+   - To verify the current mode, press **F2** to check the current status of the node.  
+     Look for the active mode in the status output.  
+     Ensure the node is set to **MAIN/MAIN mode**.  
+   ![Main/Main Mode](img/22.png) 
+
+2. **Sending Indices to the Node**  
+   To send indices to the node, you need to broadcast the list of computers using the `broadcastComputorTestnet` program.  
+   **Important**: Run this program on **only one node** at a time!
+
+   Run the `broadcastComputorTestnet` command with the following syntax:  
+   ```
+   ./broadcastComputorTestnet <ip> <epoch> <port>
+   ```
+   - <ip>: The IP address of the node where you want to send the indices.
+   - <epoch>: The epoch number (e.g., 144).
+   - <port>: The port used by the node (e.g., 31843).
+
+   Example command:
+
+   ```
+   ./broadcastComputorTestnet 193.135.9.63 144 31843
+   ```
+
+   Check the Command Result
+   After running the command, check the output. If the command is executed successfully, you should see output similar to the following:
+   ![Command result](img/20.png) 
+
+   The node should receive the indices and display them in the logs:
+   ![Node Logs](img/21.png) 
+
+   Once the indices are received, the network should start ticking (the tick number will increase):
+   ![Ticking Network](img/23.png) 
+
+If the node is ticking, it means the network has been successfully started. To interact with the network, you can use the qubic-cli tool.
+   > https://github.com/qubic/qubic-cli.git
+
+   Example command to check the balance of an address:
+
+   ```
+   ./qubic-cli -nodeip 91.210.226.133 -nodeport 31841 -getbalance SCTZJZQQCULIIGFGDANGDBMMBWSBJEOGNYOCBRZJOAOZYAHMKHJDXBPBDFIH
+   ```
+
+3. **Troubleshooting**
+
+If the node doesn't receive the indices on the first attempt, try running the command multiple times until the indices are successfully received.
+
+If the network doesn't start ticking, follow these steps:
+
+Check thread health: Press F2 while the node is running to display the current status of the node.
+![Main/Main Mode](img/22.png) 
+Ensure that all threads are healthy and the node is operating properly.
+
+Check the node connection: Verify that the node is reachable at the specified IP and port.
+Ensure that the network configuration is correct and there are no connectivity issues.
 
 ---
 
