@@ -300,7 +300,7 @@ If the output matches the expected result (similar to the screenshot below), you
 
 ## Running the Network on a Single Node
 
-To start the Qubic test network on a single node, you need an additional machine to run the echo.py script. If you are running the network on two or more nodes, you can skip this step.
+To start the Qubic test network on a single node, you need an additional machine to run the [echo.py](doc/echo.py) script. If you are running the network on two or more nodes, you can skip this step.
 
 Modify the echo.py Script
 Open the echo.py script in a text editor and update the following line:
