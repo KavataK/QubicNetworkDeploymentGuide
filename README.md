@@ -62,7 +62,7 @@ To create and prepare a Virtual Hard Disk (VHD) on Windows, follow these steps:
    ![VHD Configuration Step 3](img/4.png) 
    ![VHD Configuration Step 4](img/5.png) 
 
-4. Copy and extract the files from `144.zip` to the newly created disk. The disk should contain the following folders:
+4. Copy and extract the files from [`144.zip`](doc/144.zip) to the newly created disk. The disk should contain the following folders:
    - **efi folder**  
    - **contract files**
    - **spectrum**
@@ -254,7 +254,7 @@ After running the above command, you will receive a loop device name (e.g., /dev
    #define OPERATOR "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
    ```
 
-   **Replace computorSeeds** with seeds from the computorSeeds.txt file
+   **Replace computorSeeds** with seeds from the [computorSeeds.txt](doc/computorSeeds.txt) file
 
    The computorSeeds.txt file contains 676 entries. To run the network on two or more nodes, compile a separate qubic.efi for each node.
    Split the seeds from the computorSeeds.txt file across the nodes. 
@@ -403,7 +403,7 @@ Ensure that the network configuration is correct and there are no connectivity i
 
 All Smart Contracts (SC) and functions work the same as in the main network.
 
-The file seeds+IDs(15blneach).txt contains seeds and their IDs with 15 billion QUs on each address.
+The file [seeds+IDs(15blneach).txt](doc/seeds+IDs(15blneach).txt) contains seeds and their IDs with 15 billion QUs on each address.
 
 If the network gets stuck (ticks are not changing, excluding the initial tick), press F9 to resend the votes.
 
