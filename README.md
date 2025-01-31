@@ -240,7 +240,7 @@ After running the above command, you will receive a loop device name (e.g., /dev
 
    **Set the arbitrator**
 
-   In qubic.cpp, set the arbitrator to your desired value:
+   In qubic.cpp, set the arbitrator:
 
    ```
    #define ARBITRATOR "GVNXISEPVVSOQADMESMUYXNXABBCYFNKGPSNSSILQBOULADLKGWGXAFBCHXH"
