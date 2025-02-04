@@ -2,6 +2,9 @@
 
 This guide provides detailed instructions for creating and launching a Qubic test network using virtual machines.
 
+If you prefer to set up a node using Docker, refer to the repository below, which contains all the necessary scripts and Dockerfiles:  
+> [Qubic Testnet Docker](https://github.com/icyblob/qubic_docker)
+
 ## Minimum Requirements
 
 To start the Qubic test network, you need one node with the specifications listed below and an additional machine to run the `echo.py` script.  
@@ -85,22 +88,17 @@ To create and prepare a Virtual Hard Disk (VHD) on Linux, follow these steps:
    sudo apt-get install qemu-utils
    ```
 
-2. **Create a raw disk image** of the desired size (e.g., 16 GB):
+2. **Create a VHD** of the desired size (e.g., 16 GB):
    ```
-   dd if=/dev/zero of=/root/q.vhd bs=1M count=16384
-   ```
-
-3. **Convert the raw image to VHD format** using qemu-img:
-   ```
-   qemu-img convert -f raw -O vpc /root/q.vhd /root/qubic.vhd
+   qemu-img create -f vpc -o subformat=fixed /root/qubic.vhd 16G
    ```
 
-4. **Create a directory for mounting** the VHD:
+3. **Create a directory for mounting** the VHD:
    ```
    mkdir /mnt/qubic
    ```
 
-5. **Attach the VHD file** to a loop device using losetup:
+4. **Attach the VHD file** to a loop device using losetup:
    ```
    sudo losetup -f --show --partscan /root/qubic.vhd
    ```
@@ -108,22 +106,22 @@ To create and prepare a Virtual Hard Disk (VHD) on Linux, follow these steps:
 After running the above command, you will receive a loop device name (e.g., /dev/loopX). **Replace loopX with your actual loop device number** in the following commands.
   ![LoopX](img/18.png) 
 
-6. **Create an MS-DOS partition table**:
+5. **Create an MS-DOS partition table**:
    ```
    sudo parted /dev/loopX mklabel msdos
    ```
 
-7. **Create a primary partition**:
+6. **Create a primary partition**:
    ```
    sudo parted /dev/loopX mkpart primary fat32 0% 100%
    ```
 
-8. **Format the partition as FAT32**:
+7. **Format the partition as FAT32**:
    ```
    sudo mkfs.vfat /dev/loopXp1
    ```
 
-9. **Mount the partition** to the directory created earlier:
+8. **Mount the partition** to the directory created earlier:
    ```
    sudo mount /dev/loopXp1 /mnt/qubic
    ```
