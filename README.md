@@ -18,7 +18,7 @@ For a more stable and faster network, it is recommended to run the network on **
 **Pre-Setup:** Configure UTC Time on Your Machine
 
 You can skip the steps for creating and configuring the VHD and download the pre-configured one from the link below. The archive contains a 32GB VHD.
-> [GoogleDisk](https://drive.google.com/file/d/1N0GgWnWx-mx-euQUZGZ0M7WM1Rkd8olw/view?usp=drive_link)
+> [GoogleDisk](https://drive.google.com/file/d/1W7uV-1UOTlCMifNBHCsyesI_IB-bXSbK/view?usp=sharing)
 ---
 
 ## Table of Contents
